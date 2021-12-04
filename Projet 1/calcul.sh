@@ -4,10 +4,11 @@ echo "  ************************************************************************
 echo "  HELLO , THIS IS A SIMPLE CALCULATOR USING THE BASH PROGRAMMING LANGUAGE USING RAPBERRY PI"
 echo "  *****************************************************************************************"
 
-
-r=1
+# Mettre r=1 force le programme à entrer dans le while au moins pour une seule fois
+r=1 
 while [ $r -eq 1 ]
 do
+# Si on choisie la division , la variable y force l'entrée dans la boucle pour vérifier si le chiffre saisi par l'utilisateur est nul ou pas.
 y=0
 echo "  Choose your operation (choose a number)  "
 echo "  1- Addition "
@@ -16,6 +17,7 @@ echo "  3- Multiplication"
 echo "  4- Division"
 
 read a
+# si l'utilisateur choisi un chiffre erroné , le programme va lui deamnder de choisir un chiffre qui correspend aux opérations 
 while [ $a != 1 -a $a != 2 -a $a != 3 -a $a != 4 ]
 do
 echo "Error , type another "
