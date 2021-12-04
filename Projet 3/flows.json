@@ -1,0 +1,319 @@
+[
+    {
+        "id": "5c2fe18e222b202a",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f9c23d23.c8c24",
+        "type": "exec",
+        "z": "5c2fe18e222b202a",
+        "command": "vcgencmd measure_temp",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Raspberry CPU Temperature",
+        "x": 220,
+        "y": 180,
+        "wires": [
+            [
+                "19756e629b4474ee"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a97d78fc.40c268",
+        "type": "inject",
+        "z": "5c2fe18e222b202a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "f9c23d23.c8c24"
+            ]
+        ]
+    },
+    {
+        "id": "8317134.cff18f",
+        "type": "debug",
+        "z": "5c2fe18e222b202a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 790,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "19756e629b4474ee",
+        "type": "change",
+        "z": "5c2fe18e222b202a",
+        "name": "CHANGE TEMP TO NUMBER",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "temp=",
+                "fromt": "str",
+                "to": "",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 180,
+        "wires": [
+            [
+                "8317134.cff18f",
+                "719d54a33ef49cd3",
+                "e10d13014ef786e3"
+            ]
+        ]
+    },
+    {
+        "id": "719d54a33ef49cd3",
+        "type": "ui_gauge",
+        "z": "5c2fe18e222b202a",
+        "name": "",
+        "group": "574f9963526f04e3",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "DISPLAY",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 700,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "e10d13014ef786e3",
+        "type": "ui_chart",
+        "z": "5c2fe18e222b202a",
+        "name": "",
+        "group": "574f9963526f04e3",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Variation",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 800,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8a96734ef94e3587",
+        "type": "openweathermap",
+        "z": "5c2fe18e222b202a",
+        "name": "Temperature Paris",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "Paris",
+        "country": "France",
+        "language": "en",
+        "x": 430,
+        "y": 440,
+        "wires": [
+            [
+                "44b349cc7a293a44"
+            ]
+        ]
+    },
+    {
+        "id": "efa6b490b2a7fbd6",
+        "type": "debug",
+        "z": "5c2fe18e222b202a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 730,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "9e57dba020ab05e0",
+        "type": "inject",
+        "z": "5c2fe18e222b202a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 400,
+        "wires": [
+            [
+                "8a96734ef94e3587"
+            ]
+        ]
+    },
+    {
+        "id": "44b349cc7a293a44",
+        "type": "change",
+        "z": "5c2fe18e222b202a",
+        "name": "Paris temp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.tempc",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 530,
+        "y": 540,
+        "wires": [
+            [
+                "efa6b490b2a7fbd6",
+                "c50a7f5a16215a33"
+            ]
+        ]
+    },
+    {
+        "id": "c50a7f5a16215a33",
+        "type": "ui_gauge",
+        "z": "5c2fe18e222b202a",
+        "name": "",
+        "group": "b838012a07967ce4",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "DISPLAY",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 780,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "574f9963526f04e3",
+        "type": "ui_group",
+        "name": "TEMPE_CPU",
+        "tab": "66152549b7584338",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b838012a07967ce4",
+        "type": "ui_group",
+        "name": "Temperature Paris",
+        "tab": "66152549b7584338",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "66152549b7584338",
+        "type": "ui_tab",
+        "name": "TEMPERATURE",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
