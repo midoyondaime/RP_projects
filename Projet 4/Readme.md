@@ -46,7 +46,7 @@ Le node *publish* est configuré avec l'ip du récepteur ( Brokker ) , et avec u
 
 
 
-![](D:\out1.JPG)
+![](out1.JPG)
 
 
 
@@ -54,7 +54,7 @@ Pour la réception des données :
 
 
 
-![](D:\IN.JPG)
+![](IN.JPG)
 
 
 
@@ -62,7 +62,7 @@ Les nodes *Subscribe_* sont configurés , en précisant le *Topic* pour bien ré
 
 
 
-![](D:\in2.JPG)
+![](in2.JPG)
 
 Les résultats sont affichées dans un Dashboard.
 
