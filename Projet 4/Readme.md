@@ -38,7 +38,7 @@ Pour transmettre les informations on utilise le schéma suivant :
 
 
 
-![](D:\OUT.JPG)
+![](OUT.JPG)
 
 
 
