@@ -37,7 +37,8 @@ make #Générer l'image
 
 Après compilation : 
 
-![](C:\Users\Mido\Desktop\Project 5\image.jpeg)
+![image](C:\Users\Mido\Desktop\Project 5\image.jpeg)
+
 
 
 
@@ -51,7 +52,7 @@ Puisque l'image est volumineuse , vous la trouveriez sur le lien Drive suivant :
 
 On a réalisé le schéma suivant  :
 
-![](C:\Users\Mido\Desktop\Project 5\image1.jpeg)
+![image1](C:\Users\Mido\Desktop\Project 5\image1.jpeg)
 
 
 Mais on a pas pu établir la connexion entre la RP3 et nos téléphones portables.
