@@ -58,7 +58,6 @@ Mais on a pas pu établir la connexion entre la RP3 et nos téléphones portable
 
 
 
-
 ## Difficultés rencontrées
 
 
