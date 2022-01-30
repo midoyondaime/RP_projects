@@ -1,4 +1,4 @@
-# Readme
+# Readme BAAZIZ ELMEHDI/OUICH JALLAEDDINE
 
 Ce projet consiste à réaliser une image minimale de Linux à travers l'outil Buildroot.
 
