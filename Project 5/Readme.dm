@@ -5,6 +5,7 @@ Ce projet consiste à réaliser une image minimale de Linux à travers l'outil B
 Ensuite , développer une application Node Red capable de lire des données BLE.
 
 ## Installation
+
 On  installe Buildroot
 
 ```bash
@@ -58,8 +59,9 @@ Mais on a pas pu établir la connexion entre la RP3 et nos téléphones portable
 
 
 
+
 ## Difficultés rencontrées
 
 
 
-- [ ] Problème lors de la communication BLE
+- [ ] Problème lors dde la communication 
